@@ -1,0 +1,14 @@
+{
+  "name": "wbdv-sp21-01-mianzhang-server-node",
+  "version": "1.0.0",
+  "description": "Node server for webdev class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mian Zhang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
