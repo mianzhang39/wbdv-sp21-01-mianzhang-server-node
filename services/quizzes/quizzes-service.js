@@ -1,6 +1,5 @@
-const quizzes = require("./quizzes.json")
-
-const createQuiz = () => {}
+// const quizzes = require("./quizzes.json")
+const quizzesModel = require("../../models/quizzes/quizzes-model")
 
 // const findQuizzesForCourse = (courseId) => {
 //     return quizzes.filter((quiz) => {
@@ -8,19 +7,18 @@ const createQuiz = () => {}
 //     })
 // }
 const findAllQuizzes = () => {
-    return quizzes
+    // return quizzes
+    return quizzesModel.find()
 }
 const findQuizById = (qid) => {
-    return quizzes.find((quiz) => {
-        return (quiz._id === qid)
-    })
+    // return quizzes.find((quiz) => {
+    //     return (quiz._id === qid)
+    // })
+    return quizzesModel.findById(qid)
+        .populate("questions")
+        .exec()
 }
-const updateQuiz = () => {}
-const deleteQuiz = () => {}
 
 module.exports = {
-    createQuiz,
     findAllQuizzes, findQuizById,
-    updateQuiz, deleteQuiz,
-    // findQuizzesForCourse
 }

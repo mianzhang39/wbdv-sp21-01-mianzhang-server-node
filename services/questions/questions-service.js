@@ -1,29 +1,27 @@
-const questions = require("./questions.json")
+// const questions = require("./questions.json")
 
-const createQuestion = () => {}
-const createQuestionForQuiz = () => {}
+const questionsModel = require("../../models/questions/questions-model")
 
 const findAllQuestions = () => {
-    return questions
+    // return questions
+    return questionsModel.find()
 }
 
 const findQuestionsForQuiz = (qzid) => {
-    return questions.filter((question) => {
-        return question.quizId === qzid;
-    })
+    // return questions.filter((question) => {
+    //     return question.quizId === qzid;
+    // })
+    return questionsModel.find({quizId : qzid})
 }
 const findQuestionById = (quid) => {
-    return questions.find((question) => {
-        return question._id === quid;
-    })
+    // return questions.find((question) => {
+    //     return question._id === quid;
+    // })
+    return questionsModel.findById(quid)
 }
 
-const updateQuestion = () => {}
-const deleteQuestion = () => {}
 
 module.exports = {
-    createQuestion, createQuestionForQuiz,
     findAllQuestions, findQuestionById,
-    findQuestionsForQuiz,
-    updateQuestion, deleteQuestion
+    findQuestionsForQuiz
 }
