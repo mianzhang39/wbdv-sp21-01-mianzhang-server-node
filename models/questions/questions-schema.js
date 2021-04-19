@@ -4,7 +4,7 @@ const questionsSchema = mongoose.Schema({
     title: String,
     question: String,
     quizId: String,
-    question: String,
+    answer: String,
     correct: String,
     type: {type: String, enum: ['TRUE_FALSE', 'MULTIPLE_CHOICE']},
     choices: [String]

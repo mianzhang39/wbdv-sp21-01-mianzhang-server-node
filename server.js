@@ -24,4 +24,7 @@ questionsController(app);
 const quizzesController = require('./controllers/quizzes-controller');
 quizzesController(app);
 
+const quizAttemptsController = require('./controllers/quiz-attempts-controller');
+quizAttemptsController(app);
+
 app.listen(4000)
